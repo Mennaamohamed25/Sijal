@@ -9,6 +9,7 @@ module.exports = {
         primary: 'var(--color-primary)',
         secondery: 'var(--color-secondery)',
         cards: 'var(--color-cards)',
+        spanbg: 'var(--spanbg)',
       },
     },
   },

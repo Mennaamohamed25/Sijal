@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="bg-[#262626] my-8 py-8 text-center">
+    <div className="bg-[#262626]  py-8 text-center">
       <div className="mx-auto max-w-7xl px-8 2xl:max-w-screen-2xl ">
         <Link to="/" className="flex justify-center items-center mb-4">
           <LogoSVG
@@ -55,10 +55,10 @@ const Footer = () => {
         <hr className="my-8 w-full border-gray-600 mx-auto max-w-7xl" />
         <div className="flex flex-row items-center justify-center gap-4 p-4 text-base">
           <div className="flex items-center">
-            <Link to="/">تواصل معانا</Link>
+            <Link to="aboutus">تواصل معانا</Link>
           </div>
           <div className="flex items-center">
-            <Link>الرائسية</Link>
+            <Link to='/'>الرائسية</Link>
           </div>
         </div>
       </div>

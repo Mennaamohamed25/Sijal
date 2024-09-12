@@ -4,6 +4,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import customer1 from '../images/Ellipse 5.png';
 import customer2 from '../images/Ellipse 6.png';
 import customer3 from '../images/Ellipse 7.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -23,19 +24,21 @@ const Header = () => {
           <p className="mb-8 sm:mb-8 md:mb-8">
             تتمتع سجال بأكثر من ثلاثة عقود من الخبرة كمحامية للمحاكمات.
           </p>
-          <button
-            className="flex items-center gap-2 bg-main  sm:px-6 sm:py-3"
-            style={{
-              fontWeight: '500',
-              border: 'none',
-              fontSize: '14px',
-              smFontSize: '16px',
-              padding: '16px 24px',
-            }}
-          >
-            <span>تواصل معانا</span>
-            <ArrowLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-          </button>
+          <Link to='aboutus'>
+            <button
+              className="flex items-center gap-2 bg-main  sm:px-6 sm:py-3"
+              style={{
+                fontWeight: '500',
+                border: 'none',
+                fontSize: '14px',
+                smFontSize: '16px',
+                padding: '16px 24px',
+              }}
+            >
+              <span>تواصل معانا</span>
+              <ArrowLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+          </Link>
 
           {/* Customer Review Section */}
           <div className="flex items-center mt-8 ">

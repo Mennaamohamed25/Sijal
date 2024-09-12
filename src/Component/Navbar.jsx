@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
 
         {/* Button */}
-        <div className="rtl:mr-4 ltr:ml-4">
+        <Link to="aboutus" className="rtl:mr-4 ltr:ml-4">
           <button
             className="bg-main text-white xsmall:bg-red-600 xsmall:text-white sm:bg-main sm:text-white lg:bg-base lg:text-main xl:bg-base xl:text-main"
             style={{
@@ -30,7 +30,7 @@ const Navbar = () => {
           >
             تواصل معانا
           </button>
-        </div>
+        </Link>
       </div>
     </nav>
   );

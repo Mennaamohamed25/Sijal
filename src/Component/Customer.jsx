@@ -28,7 +28,7 @@ const Customer = () => {
             نتمتع بأكثر من ثلاثة عقود من الخبرة كمحامي للمحاكمات.
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 justify-center">
+        <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-4 justify-center">
           {columnContent.map((item) => (
             <div
               key={item.id}
