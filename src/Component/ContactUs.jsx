@@ -161,10 +161,10 @@ const ContactUs = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative z-10 flex flex-col lg:flex-row h-full items-center justify-center px-4 lg:px-16 w-full max-w-7xl px-8 xl:max-w-7xl 2xl:max-w-screen-2xl mx-auto"
+          className="relative z-10 flex flex-col lg:flex-row h-full items-start lg:px-16 w-full max-w-7xl px-8 md:items-center xl:max-w-7xl xl:items-center 2xl:max-w-screen-2xl mx-auto"
         >
           {/* Second Column: Row with 2 Columns */}
-          <div className="lg:w-1/2 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-8 lg:mt-0">
+          <div className="lg:w-1/2 flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 mt-8 lg:mt-0 justify-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}

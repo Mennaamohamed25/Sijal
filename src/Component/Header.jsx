@@ -18,7 +18,7 @@ const Header = () => {
           className=" relative z-10 max-w-7xl px-8 xl:max-w-7xl 2xl:max-w-screen-2xl mx-auto w-full"
           style={{ marginTop: '3.5rem' }}
         >
-          <h1 className="text-[27px] sm:text-[30px] md:text-[45px] lg:text-[65px] xl:text-[60px] font-bold mb-8 leading-normal">
+          <h1 className="text-[26px] sm:text-[30px] md:text-[45px] lg:text-[58px] xl:text-[60px] font-bold mb-8 leading-normal">
             شريكك القانوني الموثوق به في <br /> العراق، حيث نقدم لك الخبرة
             <br /> والاحترافية لحماية حقوقك <br />
             وتحقيق العدالة{' '}
