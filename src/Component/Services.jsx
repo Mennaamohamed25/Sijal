@@ -173,12 +173,15 @@ const Services = () => {
             />
 
             {/* Description (appears fully on hover) */}
-            <p className="text-[13px] absolute inset-0 bg-black bg-opacity-70 text-base text-white p-4 flex flex-col justify-center hidden sm:flex opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out leading-relaxed">
+            <p className="text-[12px] absolute inset-0 bg-black bg-opacity-70 text-base text-white p-4 flex flex-col justify-center hidden sm:flex opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out leading-relaxed">
               {service.desc}
             </p>
 
             {/* Title fixed at the bottom initially and moves to the top on hover */}
-            <h2 className="p-4 text-center absolute bottom-0 left-0 right-0 text-base text-lg sm:text-xl font-bold py-2 transition-transform duration-500 ease-in-out transform group-hover:translate-y-0 group-hover:top-0 group-hover:bottom-auto md:group-hover:translate-y-0 md:group-hover:top-0 sm:group-hover:bottom-auto">
+            <h2 className="p-4 text-center absolute bottom-0 left-0 right-0 text-base text-lg sm:text-xl font-bold py-2 transition-transform duration-500 ease-in-out transform group-hover:translate-y-0 group-hover:top-0 group-hover:bottom-auto hidden sm:block md:group-hover:translate-y-0 md:group-hover:top-0 sm:group-hover:bottom-auto">
+              {service.title}
+            </h2>
+            <h2 className="p-4 text-center block absolute bottom-0 left-0 right-0 text-base text-lg sm:text-xl font-bold py-2 md:hidden lg:hidden">
               {service.title}
             </h2>
           </div>
