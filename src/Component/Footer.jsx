@@ -64,7 +64,7 @@ const Footer = () => {
       </div>
       <div className="w-full flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="w-full md:w-1/2 p-4 text-center md:text-right">
-          <p className="text-sm text-base">ساجال © 2024. جميع الحقوق محفوظة.</p>
+          <p className="text-sm text-base">سجال © 2024. جميع الحقوق محفوظة.</p>
         </div>
         <div className="w-full md:w-1/2 p-4 text-center md:text-left flex justify-center md:justify-end gap-4 sm:gap-8">
           {[FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter].map(

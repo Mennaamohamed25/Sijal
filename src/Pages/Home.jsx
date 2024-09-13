@@ -30,14 +30,8 @@ const Home = () => {
         <Header />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.2 }} // No 'once: true', so it animates each time it enters the viewport
-        variants={sectionVariants}
-      >
         <Service />
-      </motion.div>
+    
 
       <motion.div
         initial="hidden"
