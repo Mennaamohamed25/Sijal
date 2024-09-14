@@ -208,7 +208,7 @@ const ContactUs = () => {
               >
                 <h2 className="">البريد الإلكتروني</h2>
                 <div className="w-[27px] h-[3px] bg-black my-5"></div>
-                <p className="">moad@alsigal.com</p>
+                <p className="">info@sijal.net</p>
               </motion.div>
             </div>
           </div>
