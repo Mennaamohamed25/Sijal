@@ -33,7 +33,7 @@ const Footer = () => {
             <div className="w-12 h-12 rounded-full p-3 bg-main mb-2 sm:mb-0">
               <PhoneIcon className="h-6 w-6 text-base" />
             </div>
-            <div className="text-right mr-4 text-base">
+            <div className="text-center md:text-right lg:text-right xl:text-right mr-4 text-base">
               <p className="opacity-40">رقم الهاتف</p>
               <p className="ml-2 text-lg" style={{ direction: 'ltr' }}>
                 +9647740606806
@@ -44,7 +44,7 @@ const Footer = () => {
             <div className="w-12 h-12 rounded-full p-3 bg-main mb-2 sm:mb-0">
               <EnvelopeIcon className="h-6 w-6 text-base" />
             </div>
-            <div className="text-right mr-4 text-base">
+            <div className="text-center md:text-right lg:text-right xl:text-right mr-4 text-base">
               <p className="opacity-40">تواصل معنا</p>
               <p className="ml-2 text-lg">info@sijal.net</p>
             </div>
