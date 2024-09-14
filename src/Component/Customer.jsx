@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Swiper core styles
 import 'swiper/css/navigation'; // Swiper navigation styles
 import 'swiper/css/pagination'; // Swiper pagination styles
+import { Autoplay } from 'swiper/modules'; // Import Autoplay module from swiper/modules
 
 const columnContent = [
   { id: 1, image: customerOne },
@@ -29,19 +30,27 @@ const Customer = () => {
         {/* Swiper Carousel for small screens */}
         <div className="block lg:hidden">
           <Swiper
-            spaceBetween={10}
-            slidesPerView={1.5}
+            spaceBetween={6} // Reduced gap for small screens
+            slidesPerView={2.5} // Show 2.5 columns on small screens
             breakpoints={{
-              640: { slidesPerView: 3.5 },
-              768: { slidesPerView: 3.5 },
-              1024: { slidesPerView: 4.5 },
+              640: { slidesPerView: 3, spaceBetween: 8 },
+              768: { slidesPerView: 3.5, spaceBetween: 10 },
+              1024: { slidesPerView: 4.5, spaceBetween: 12 },
             }}
             loop={true}
             centeredSlides={true}
+            autoplay={{ delay: 2500, disableOnInteraction: false }} // Auto-play settings
+            modules={[Autoplay]} // Register the Autoplay module
           >
             {columnContent.map((item) => (
               <SwiperSlide key={item.id}>
-                <img src={item.image} alt="customer" className="opacity-40" />
+                <div className="flex justify-center items-center">
+                  <img
+                    src={item.image}
+                    alt="customer"
+                    className="h-40 object-contain opacity-40"
+                  />
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>

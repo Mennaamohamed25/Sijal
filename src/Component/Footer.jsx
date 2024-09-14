@@ -28,10 +28,9 @@ const Footer = () => {
           بأعلى معايير المهنية.
         </p>
 
-        <div className="flex flex-row items-center justify-center gap-4 p-4">
-          <div className="flex items-center">
-            <div className="w-12 h-12 rounded-full p-3 bg-main">
-              {' '}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 p-4">
+          <div className="flex flex-col sm:flex-row items-center">
+            <div className="w-12 h-12 rounded-full p-3 bg-main mb-2 sm:mb-0">
               <PhoneIcon className="h-6 w-6 text-base" />
             </div>
             <div className="text-right mr-4 text-base">
@@ -41,9 +40,8 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="flex items-center">
-            <div className="w-12 h-12 rounded-full p-3 bg-main">
-              {' '}
+          <div className="flex flex-col sm:flex-row items-center">
+            <div className="w-12 h-12 rounded-full p-3 bg-main mb-2 sm:mb-0">
               <EnvelopeIcon className="h-6 w-6 text-base" />
             </div>
             <div className="text-right mr-4 text-base">
@@ -52,13 +50,14 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <hr className="my-8 w-full border-gray-600 mx-auto max-w-7xl" />
-        <div className="flex flex-row items-center justify-center gap-4 p-4 text-base">
-          <div className="flex items-center">
+        <div className="flex flex-row items-center justify-center gap-4 p-4 text-base ">
+          <div className="flex items-center ">
             <Link to="aboutus">تواصل معانا</Link>
           </div>
           <div className="flex items-center">
-            <Link to='/'>الرائسية</Link>
+            <Link to="/">الرائسية</Link>
           </div>
         </div>
       </div>

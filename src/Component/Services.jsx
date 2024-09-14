@@ -151,7 +151,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-8 2xl:max-w-screen-2xl py-4">
       <div className="my-4 text-start">
         <h1 className="text-main text-[32px] sm:text-[40px] font-semibold">
           الخدمات
@@ -173,7 +173,7 @@ const Services = () => {
             />
 
             {/* Description (appears fully on hover) */}
-            <p className="text-[12px] absolute inset-0 bg-black bg-opacity-70 text-base text-white p-4 flex flex-col justify-center hidden sm:flex opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out leading-relaxed">
+            <p className="text-[11px] absolute inset-0 bg-black bg-opacity-70 text-base text-white p-4 flex flex-col justify-center hidden sm:flex opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out leading-relaxed">
               {service.desc}
             </p>
 

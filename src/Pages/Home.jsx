@@ -1,64 +1,82 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
+// Components
 import Header from '../Component/Header';
 import Service from '../Component/Services';
 import Aboutus from '../Component/AboutUs';
 import Benefits from '../Component/Benefits';
 import Customers from '../Component/Customer';
 
-// Define variants for each section with more dynamic animation
+// Define animation variants
 const sectionVariants = {
-  hidden: { opacity: 0, y: 100, scale: 0.95 }, // Start with opacity 0, translateY 100px, and a slight shrink
+  hidden: { opacity: 0, y: 100, scale: 0.95 }, // Initial state
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1, // As the component becomes visible, it returns to its original scale and position
-    transition: { duration: 0.8, ease: 'easeOut' }, // Smooth transition timing
+    scale: 1, // Final state
+    transition: { duration: 0.8, ease: 'easeOut' }, // Animation properties
   },
+};
+
+const Section = ({ children }) => {
+  const controls = useAnimation();
+  const sectionRef = useRef(null);
+
+  const handleScroll = () => {
+    const section = sectionRef.current;
+    if (section) {
+      const { top, bottom } = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight && bottom > 0) {
+        controls.start('visible');
+      } else {
+        controls.start('hidden');
+      }
+    }
+  };
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Trigger on mount
+
+    return () => window.removeEventListener('scroll', handleScroll); // Cleanup
+  }, [controls]);
+
+  return (
+    <motion.div
+      ref={sectionRef}
+      variants={sectionVariants}
+      initial="hidden"
+      animate={controls}
+    >
+      {children}
+    </motion.div>
+  );
 };
 
 const Home = () => {
   return (
     <>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.2 }} // Animation triggers every time 20% of the section is in view
-        variants={sectionVariants}
-      >
-        <Header />
-      </motion.div>
+      <Header />
 
+      <Section>
         <Service />
-    
+      </Section>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants}
-      >
+      <Section>
         <Aboutus />
-      </motion.div>
+      </Section>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants}
-      >
+      <Section>
         <Benefits />
-      </motion.div>
+      </Section>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.2 }}
-        variants={sectionVariants}
-      >
+      <Section>
         <Customers />
-      </motion.div>
+      </Section>
     </>
   );
 };
