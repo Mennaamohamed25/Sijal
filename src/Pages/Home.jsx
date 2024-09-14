@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 // Components
@@ -23,7 +23,8 @@ const Section = ({ children }) => {
   const controls = useAnimation();
   const sectionRef = useRef(null);
 
-  const handleScroll = () => {
+  // Define handleScroll function and memoize it
+  const handleScroll = useCallback(() => {
     const section = sectionRef.current;
     if (section) {
       const { top, bottom } = section.getBoundingClientRect();
@@ -35,7 +36,7 @@ const Section = ({ children }) => {
         controls.start('hidden');
       }
     }
-  };
+  }, [controls]);
 
   useEffect(() => {
     // Add scroll event listener
@@ -43,7 +44,7 @@ const Section = ({ children }) => {
     handleScroll(); // Trigger on mount
 
     return () => window.removeEventListener('scroll', handleScroll); // Cleanup
-  }, [controls]);
+  }, [handleScroll]); // Include handleScroll in dependencies
 
   return (
     <motion.div
