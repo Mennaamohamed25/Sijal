@@ -228,7 +228,7 @@ const ContactUs = () => {
                   />
                   <img
                     src={popimg}
-                    alt="Popup Image"
+                    alt="Popup "
                     className="w-full h-auto object-cover"
                   />
                 </div>
