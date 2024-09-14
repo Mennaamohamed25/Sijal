@@ -6,15 +6,15 @@ import 'swiper/css/pagination'; // Swiper pagination styles
 import { Autoplay } from 'swiper/modules'; // Import Autoplay module from swiper/modules
 
 // Import SVGs as React components
-import { ReactComponent as CustomerOne } from '../images/TICKSYNC.svg';
-import { ReactComponent as CustomerTwo } from '../images/XLABRESEACH.svg';
-import { ReactComponent as CustomerThree } from '../images/c1.svg';
-import { ReactComponent as CustomerFour } from '../images/c2.svg';
-import { ReactComponent as CustomerFive } from '../images/c3.svg';
-import { ReactComponent as CustomerSix } from '../images/c4.svg';
-import { ReactComponent as CustomerSeven } from '../images/c5.svg';
-import { ReactComponent as CustomerEi } from '../images/quantgamma.svg';
-import { ReactComponent as CustomerNi } from '../images/ticklab.svg';
+import { ReactComponent as CustomerOne } from '../images/c1.svg';
+import { ReactComponent as CustomerTwo } from '../images/c2.svg';
+import { ReactComponent as CustomerThree } from '../images/c3.svg';
+import { ReactComponent as CustomerFour } from '../images/c4.svg';
+import { ReactComponent as CustomerFive } from '../images/c5.svg';
+import { ReactComponent as CustomerSix } from '../images/c6.svg';
+import { ReactComponent as CustomerSeven } from '../images/c7.svg';
+import { ReactComponent as CustomerEi } from '../images/c8.svg';
+import { ReactComponent as CustomerNi } from '../images/c9.svg';
 
 const columnContent = [
   { id: 1, Component: CustomerOne },
@@ -43,7 +43,7 @@ const Customer = () => {
           spaceBetween={8} // Reduced gap between slides
           slidesPerView={2} // Default to 2 slides per view for small screens
           breakpoints={{
-            320: { slidesPerView: 2, spaceBetween: 8 }, // Show 2 slides on extra small screens
+            320: { slidesPerView: 2, spaceBetween: 4 }, // Show 2 slides on extra small screens
             640: { slidesPerView: 2, spaceBetween: 8 }, // Show 2 slides on small screens
             768: { slidesPerView: 3, spaceBetween: 12 }, // Show 3 slides on medium screens with reduced gap
             1024: { slidesPerView: 4, spaceBetween: 16 }, // Show 4 slides on large screens with moderate gap
@@ -57,7 +57,7 @@ const Customer = () => {
           {columnContent.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="flex justify-center items-center">
-                <item.Component className="w-32 h-32 fill-white opacity-40" />{' '}
+                <item.Component className=" h-32 fill-white opacity-40" />{' '}
                 {/* Adjusted dimensions */}
               </div>
             </SwiperSlide>

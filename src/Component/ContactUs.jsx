@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'; // Import close icon
-import Contactbg from '../images/Contact.png';
-import popimg from '../images/popup.png';
-import personal from '../images/Component 6.png';
+import { motion } from 'framer-motion';
+import { ArrowLeftIcon, XMarkIcon } from '@heroicons/react/24/outline'; 
+import Contactbg from '../images/Contact.png'; 
+import personal from '../images/Component 6.png'; 
 import { useInView } from 'react-intersection-observer';
+import popup from '../images/popup.png'
 
 // Define animation variants
 const sectionVariants = {
@@ -13,11 +13,14 @@ const sectionVariants = {
 };
 
 const ContactUs = () => {
-  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // Toggle popup visibility
-  const togglePopup = () => {
-    setPopupVisible(!isPopupVisible);
+  const handleButtonClick = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
   };
 
   const { ref: textRef, inView: textInView } = useInView({
@@ -113,7 +116,7 @@ const ContactUs = () => {
                 fontSize: '14px',
                 padding: '16px 24px',
               }}
-              onClick={togglePopup}
+              onClick={handleButtonClick}
             >
               <span>ارسل </span>
               <ArrowLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -173,7 +176,7 @@ const ContactUs = () => {
           variants={sectionVariants}
           className="relative z-10 flex flex-col lg:flex-row h-full items-start lg:px-16 w-full max-w-7xl px-8 md:items-center xl:max-w-7xl xl:items-center 2xl:max-w-screen-2xl mx-auto"
         >
-          {/* Fist Column: Row with 2 Columns */}
+          {/* First Column: Row with 2 Columns */}
           <div className="lg:w-1/2 space-y-4 mt-8 lg:mt-0">
             {/* Headline */}
             <div className="mb-8">
@@ -205,38 +208,55 @@ const ContactUs = () => {
               >
                 <h2 className="">البريد الإلكتروني</h2>
                 <div className="w-[27px] h-[3px] bg-black my-5"></div>
-                <p className="" style={{ direction: 'ltr' }}>
-                  info@al-sajal.com
-                </p>
+                <p className="">moad@alsigal.com</p>
               </motion.div>
             </div>
           </div>
 
-          {/* Popup Image */}
-          <AnimatePresence>
-            {isPopupVisible && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex items-center justify-center"
-              >
-                <div className="relative p-6 bg-white rounded-lg">
-                  <XMarkIcon
-                    onClick={togglePopup}
-                    className="w-6 h-6 absolute top-2 right-2 cursor-pointer"
-                  />
-                  <img
-                    src={popimg}
-                    alt="Popup "
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Second Column with Added Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:w-1/2 space-y-4 mt-8 lg:mt-0 text-right"
+          >
+            <p className="text-[32px] text-[#000] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[50px] font-semibold">
+              نحن سعداء دائما بمساعدتك{' '}
+            </p>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* Popup */}
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div
+            className="bg-white w-[320px]  h-auto p-6 gap-8 rounded-[16px] animate-opacity transition-opacity duration-300 ease-in-out shadow-lg 
+        md:w-[300px] md:h-auto lg:w-[590px] lg:h-[436px] lg:p-6 xl:w-[590px] xl:h-[436px] xl:p-6 "
+          >
+            {/* Close Icon */}
+            <div className="flex justify-end">
+              <XMarkIcon
+                className="w-6 h-6 cursor-pointer"
+                onClick={handleClosePopup}
+              />
+            </div>
+
+            {/* Content */}
+            <div className="text-center text-primary">
+              <img
+                src={popup}
+                alt="popup"
+                className="m-auto w-24  md:w-auto lg:w-auto xl:w-auto"
+              />
+              <h1 className="text-[28px] font-bold mt-8 mb-2 md:text-[39px] lg:text-[42px] xl:text-[42px]">
+                شكرًا لك!
+              </h1>
+              <p className="text-primary ">لقد تم ارسال رسالتك</p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
